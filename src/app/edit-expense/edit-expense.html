@@ -2,38 +2,39 @@
   <div class="card shadow-sm">
     <div class="card-body">
       <h4 class="card-title mb-3 text-center">Edit Expense</h4>
+
+      <p>The expense id is {{ expense?.id }} and amount is {{ expense?.amount }}</p>
+
+      <!-- TITLE -->
       <div class="mb-3">
-        <p>The expense id is 1776139305024 and amount is 2</p>
-        <label class="form-label">Expense Title</label
-        ><input
-          type="text"
-          class="form-control ng-untouched ng-pristine ng-valid"
-          placeholder="a"
-        />
+        <label class="form-label">Expense Title</label>
+        <input type="text" class="form-control" [(ngModel)]="editTitle" />
       </div>
+
+      <!-- AMOUNT -->
       <div class="mb-3">
-        <label class="form-label">Amount ($)</label
-        ><input
-          type="number"
-          placeholder="100"
-          class="form-control ng-untouched ng-pristine ng-valid"
-        />
+        <label class="form-label">Amount ($)</label>
+        <input type="number" class="form-control" [(ngModel)]="editAmount" />
       </div>
+
+      <!-- CATEGORY -->
       <div class="mb-3">
-        <label class="form-label">Category</label
-        ><select class="form-select ng-untouched ng-pristine ng-valid">
-          <option value="" disabled="" selected="">Select category</option>
+        <label class="form-label">Category</label>
+        <select class="form-select" [(ngModel)]="editCategory">
+          <option value="" disabled>Select category</option>
           <option value="School">School</option>
           <option value="Personal">Personal</option>
           <option value="Grocery">Grocery</option>
           <option value="Utilities">Utilities</option>
           <option value="Shopping">Shopping</option>
           <option value="Travel">Travel</option>
-          <option value="Grocery">Grocery</option>
-          <!---->
         </select>
       </div>
-      <div class="d-grid"><button class="btn btn-primary">Edit Expense</button></div>
+
+      <!-- BUTTON -->
+      <div class="d-grid">
+        <button class="btn btn-primary" (click)="saveExpense()">Edit Expense</button>
+      </div>
     </div>
   </div>
 </div>

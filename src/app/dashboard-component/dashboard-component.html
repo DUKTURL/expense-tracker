@@ -5,7 +5,7 @@
       <div class="card shadow-sm border-primary">
         <div class="card-body">
           <h5 class="card-title">Total Expenses</h5>
-          <h3 class="text-primary">$0.00</h3>
+          <h3 class="text-primary">${{ totalExpenses() }}</h3>
         </div>
       </div>
     </div>
@@ -13,7 +13,7 @@
       <div class="card shadow-sm border-success">
         <div class="card-body">
           <h5 class="card-title">Number of Expenses</h5>
-          <h3 class="text-success">0</h3>
+          <h3 class="text-success">{{ numberOfExpenses() }}</h3>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <div class="card shadow-sm border-success">
         <div class="card-body">
           <h5 class="card-title">Highest Expense</h5>
-          <h3 class="text-success">$0.00</h3>
+          <h3 class="text-success">${{ highestExpense() }}</h3>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
       <div class="card shadow-sm border-success">
         <div class="card-body">
           <h5 class="card-title">Average Expense per Transaction</h5>
-          <h3 class="text-success">$0.00</h3>
+          <h3 class="text-success">${{ averageExpense() }}</h3>
         </div>
       </div>
     </div>

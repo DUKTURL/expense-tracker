@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Expense, ExpenseCategory } from '../expense';
+import { Expense, ExpenseCategory } from '../expense.model';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ExpenseService } from '../expense';
 
 @Component({
   imports: [FormsModule],
@@ -12,19 +13,19 @@ export class AddExpense {
   amount: number | null = 0;
   category: ExpenseCategory | '' = '';
 
-  @Output() expenseAdded = new EventEmitter<Expense>();
+  constructor(private expenseService: ExpenseService) {}
 
   addExpense(form: NgForm) {
     if (!this.title || !this.amount || !this.category) return;
 
-    const newExpense = {
+    const newExpense: Expense = {
       id: crypto.randomUUID(),
       title: this.title,
       amount: this.amount,
       category: this.category,
     };
 
-    this.expenseAdded.emit(newExpense);
+    this.expenseService.addExpense(newExpense);
 
     form.resetForm({
       title: '',

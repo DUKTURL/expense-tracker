@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Expense } from '../expense';
+import { Component } from '@angular/core';
+import { ExpenseService } from '../expense';
 import { ExpenseItem } from '../expense-item/expense-item';
 
 @Component({
@@ -9,5 +9,5 @@ import { ExpenseItem } from '../expense-item/expense-item';
   styleUrl: './expense-list.css',
 })
 export class ExpenseList {
-  @Input() items: Expense[] = [];
+  constructor(public expenseService: ExpenseService) {}
 }
